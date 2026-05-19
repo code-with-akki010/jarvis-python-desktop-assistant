@@ -23,9 +23,17 @@ This version is designed to be reliable on normal desktops and laptops without r
 
 The project includes a visual architecture page:
 
-[View Architecture Diagram](architecture.html)
+[View Architecture Diagram as Webpage](https://code-with-akki010.github.io/jarvis-python-desktop-assistant/architecture.html)
 
-Note: GitHub shows HTML files as source code inside the repository. To view the diagram as a webpage, download/open `architecture.html` in a browser or publish the repository with GitHub Pages.
+GitHub opens `.html` files as source code inside the repository. To view the architecture diagram as a real webpage, enable GitHub Pages:
+
+1. Go to repository **Settings**.
+2. Open **Pages**.
+3. Set **Source** to `Deploy from a branch`.
+4. Select branch `main` and folder `/root`.
+5. Save and wait a few minutes.
+
+After GitHub Pages is active, the architecture page will open from the link above. If your repository name is different, replace `jarvis-python-desktop-assistant` in the URL with your actual repository name.
 
 ## Tech Stack
 
@@ -46,7 +54,7 @@ Note: GitHub shows HTML files as source code inside the repository. To view the 
 Clone this repository:
 
 ```powershell
-git clone https://github.com/code-with-akki010/jarvis-python-desktop-assistant.git
+git clone https://github.com/your-username/jarvis-python-desktop-assistant.git
 cd jarvis-python-desktop-assistant
 ```
 
@@ -159,3 +167,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 Built as a Python desktop assistant project by `code-with-akki010`.
 
 If you like this project, consider giving it a star on GitHub.
+
