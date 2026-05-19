@@ -25,15 +25,6 @@ The project includes a visual architecture page:
 
 [View Architecture Diagram as Webpage](https://code-with-akki010.github.io/jarvis-python-desktop-assistant/architecture.html)
 
-GitHub opens `.html` files as source code inside the repository. To view the architecture diagram as a real webpage, enable GitHub Pages:
-
-1. Go to repository **Settings**.
-2. Open **Pages**.
-3. Set **Source** to `Deploy from a branch`.
-4. Select branch `main` and folder `/root`.
-5. Save and wait a few minutes.
-
-After GitHub Pages is active, the architecture page will open from the link above. If your repository name is different, replace `jarvis-python-desktop-assistant` in the URL with your actual repository name.
 
 ## Tech Stack
 
