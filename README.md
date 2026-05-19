@@ -2,60 +2,78 @@
 
 ![Jarvis Python Desktop Assistant](assets/jarvis-banner.png)
 
-Jarvis is a simple Python desktop assistant that works through typed terminal commands. It can open websites, launch Windows applications, open common folders, search YouTube, open Google News, tell the current time and date, tell programming jokes, and search Google for anything it does not recognize.
+Jarvis is a terminal-based Python desktop assistant built for quick local tasks. It accepts typed commands, speaks responses using text-to-speech, opens websites, launches Windows apps, opens folders, searches YouTube, opens Google News, tells the time/date, tells programming jokes, and falls back to Google Search for unknown commands.
 
-This version is designed to be reliable on desktops and laptops without needing a microphone, speech recognition, API keys, or paid AI services.
+This version is designed to be reliable on normal desktops and laptops without requiring a microphone, speech recognition, API keys, databases, or paid cloud services.
 
 ## Features
 
-- Open popular websites such as Google, YouTube, Gmail, Instagram, WhatsApp Web, and GitHub.
-- Launch Windows apps such as Notepad, Calculator, Paint, and Command Prompt.
-- Open common folders such as Desktop, Downloads, Documents, and Pictures.
-- Play or search songs on YouTube.
-- Open today's top stories on Google News.
+- Open popular websites: Google, YouTube, Gmail, Instagram, WhatsApp Web, and GitHub.
+- Launch Windows applications: Notepad, Calculator, Paint, and Command Prompt.
+- Open common local folders: Desktop, Downloads, Documents, and Pictures.
+- Search or play songs through YouTube search results.
+- Open Google News top stories.
 - Tell the current time and date.
 - Tell random programming jokes using `pyjokes`.
-- Search Google for unknown commands or custom questions.
-- Exit cleanly from the terminal.
+- Search Google automatically for unknown commands.
+- Speak responses using `pyttsx3`.
+- Stop cleanly with `exit`, `quit`, or `stop`.
+
+## Architecture
+
+The project includes a visual architecture page:
+
+[View Architecture Diagram](architecture.html)
+
+Note: GitHub shows HTML files as source code inside the repository. To view the diagram as a webpage, download/open `architecture.html` in a browser or publish the repository with GitHub Pages.
 
 ## Tech Stack
 
-- **Python**
-- **pyttsx3** for text-to-speech output
-- **pyjokes** for random programming jokes
-- **webbrowser** for opening websites and searches
-- **subprocess** for launching desktop apps
-- **datetime** for time and date commands
-- **pathlib** and **os** for opening common folders
+| Technology | Purpose |
+| --- | --- |
+| Python | Main programming language |
+| `pyttsx3` | Offline text-to-speech output |
+| `pyjokes` | Random programming jokes |
+| `webbrowser` | Opens websites, YouTube searches, Google News, and Google fallback search |
+| `subprocess` | Launches Windows desktop applications |
+| `os.startfile` | Opens local folders on Windows |
+| `pathlib` | Builds user-folder paths |
+| `datetime` | Gets current time and date |
+| `urllib.parse.quote_plus` | Safely formats search queries for URLs |
 
 ## Installation
 
-Clone the repository or download the project files.
+Clone this repository:
 
-Install the required Python packages:
+```powershell
+git clone https://github.com/code-with-akki010/jarvis-python-desktop-assistant.git
+cd jarvis-python-desktop-assistant
+```
+
+Install the required packages:
 
 ```powershell
 pip install pyttsx3 pyjokes
 ```
 
-If `pyttsx3` has voice issues on your system, make sure Windows text-to-speech voices are installed and enabled.
+If `pyttsx3` does not speak on your system, check that Windows text-to-speech voices are installed and enabled.
 
-## How To Run
+## Run The Project
 
-Open a terminal in the project folder and run:
+Start Jarvis from the project folder:
 
 ```powershell
 python main.py
 ```
 
-You should see:
+Expected output:
 
 ```text
 Jarvis: Initializing Jarvis
 Type command for Jarvis:
 ```
 
-Now type a supported command and press Enter.
+Type a command and press Enter.
 
 ## Supported Commands
 
@@ -75,7 +93,7 @@ Now type a supported command and press Enter.
 | `open downloads` | Opens the Downloads folder |
 | `open documents` | Opens the Documents folder |
 | `open pictures` | Opens the Pictures folder |
-| `play believer` | Searches YouTube for the song |
+| `play believer` | Opens YouTube search results for the song |
 | `search youtube python tutorial` | Searches YouTube for a topic |
 | `news` | Opens Google News top stories |
 | `time` | Tells the current time |
@@ -105,32 +123,39 @@ Jarvis: Searching about artificial intelligence
 ## Project Structure
 
 ```text
-project-3 jarvis/
-├── assets/
-│   └── jarvis-banner.png
-├── main.py
-└── README.md
+jarvis-python-desktop-assistant/
+|-- assets/
+|   `-- jarvis-banner.png
+|-- architecture.html
+|-- LICENSE
+|-- main.py
+`-- README.md
 ```
 
 ## Notes And Limitations
 
-- This version uses typed terminal commands.
-- Voice recognition was removed because the project should work reliably without a microphone.
-- Hugging Face API, NewsAPI, and screenshot features were removed or replaced to avoid API-key issues and unreliable behavior.
-- Some commands are Windows-specific, especially app launching and folder opening.
+- This project uses typed terminal commands, not microphone input.
+- Voice recognition was removed so the assistant can work on systems without a microphone.
+- Hugging Face API, NewsAPI, and screenshot features were removed or replaced for reliability.
+- App-launching and folder-opening commands are Windows-focused.
 - The `play` command opens YouTube search results instead of directly controlling YouTube playback.
+- `pyjokes` is optional at runtime; if it is missing, Jarvis tells the user to install it.
 
 ## Future Improvements
 
-- Add a graphical user interface.
-- Add a command history feature.
+- Add a simple graphical user interface.
+- Add command history.
 - Add custom user-defined shortcuts.
-- Add support for more Windows apps.
+- Add support for more Windows applications.
 - Add cross-platform support for macOS and Linux.
 - Add optional voice input only when a microphone is available.
 
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
 ## Author
 
-Built as a Python desktop assistant project.
+Built as a Python desktop assistant project by `code-with-akki010`.
 
 If you like this project, consider giving it a star on GitHub.
