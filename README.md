@@ -48,6 +48,7 @@ Clone this repository:
 git clone https://github.com/your-username/jarvis-python-desktop-assistant.git
 cd jarvis-python-desktop-assistant
 ```
+Replace `your-username` with your GitHub username
 
 Install the required packages:
 
